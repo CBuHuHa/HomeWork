@@ -6,12 +6,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-
             Task_1();
             Task_2();
             Task_3();
             Task_4();
-
         }
 
         public static void Task_1()
@@ -53,7 +51,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     Console.WriteLine(result);
                     break;
             }
-
         }
 
         public static void Task_2()
@@ -121,7 +118,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 default:
                     Console.WriteLine("unknown word");
                     break;
-
             }
         }
 
