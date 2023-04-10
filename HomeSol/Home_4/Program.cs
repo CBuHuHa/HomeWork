@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlTypes;
 using System.Reflection.Metadata;
+using System.Text.RegularExpressions;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -13,7 +15,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //Task_3();
             //Task_4();
             //Task_5();
-            //Task_6();
+            Task_6();
+
+            Console.ReadLine();
         }
 
         /// <summary>
@@ -26,8 +30,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             string testing = test.Replace("test", "testing");
             Console.WriteLine(testing);
-
-            Console.ReadLine();
         }
 
         /// <summary>
@@ -42,10 +44,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
             string word4 = "TMS";
             string word5 = "lessons";
 
-            string sentence = string.Concat("\"", word1, "\" ",  "\"",word2, "\" ", "\"", word3, "\" ", "\"", word4, "\" ", "\"", word5, "\"");
+            string sentence = string.Concat("\"", word1, "\" ", "\"", word2, "\" ", "\"", word3, "\" ", "\"", word4, "\" ", "\"", word5, "\"");
             Console.WriteLine(sentence);
-
-            Console.ReadLine();
         }
         /// <summary>
         /// Дана строка: teamwithsomeofexcersicesabcwanttomakeitbetter.
@@ -61,8 +61,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
             string secondPart = s.Substring(firstPart.Length + substring.Length);
             Console.WriteLine(firstPart);
             Console.WriteLine(secondPart);
-
-            Console.ReadLine();
         }
 
         /// <summary>
@@ -73,14 +71,12 @@ namespace MyApp // Note: actual namespace depends on the project name.
         public static void Task_4()
         {
             string s = "Good day";
-            string good = "Good";
             string text = "The best!!!!!!!!!";
 
-            string newText = text.Insert(8, s.Substring(good.Length));
+            string day = s.Substring(4);
+            string newText = text.Insert(8, day);
             string result = string.Concat(newText.Substring(0, newText.Length - 1), "?");
             Console.WriteLine(result);
-            
-            Console.ReadLine();
         }
 
         /// <summary>
@@ -101,13 +97,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 }
                 else
                     numbers = string.Concat(numbers, (char)c);
-
-
             }
             Console.WriteLine("letters: " + letters);
             Console.WriteLine("numbers: " + numbers);
-
-            Console.ReadLine();
         }
 
         /// <summary>
@@ -115,8 +107,26 @@ namespace MyApp // Note: actual namespace depends on the project name.
         /// </summary>
         public static void Task_6()
         {
+            Console.Write("Enter the first sentence: ");
+            string? sentence1 = Regex.Replace(Console.ReadLine(), "[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]", " ").ToLower();
+            Console.Write("Enter the second sentence: ");
+            string? sentence2 = Regex.Replace(Console.ReadLine(), "[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]", " ").ToLower();
 
+            string[] words1 = sentence1.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Distinct().ToArray();
+            string[] words2 = sentence2.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            int counter = 0;
+            foreach (string word1 in words1)
+            {
+                foreach (string word2 in words2)
+                {
+                    if (word1.Equals(word2))
+                    {
+                        counter++;
+                    }
+                }
+                Console.WriteLine($"{word1} = {counter}");
+                counter = 0;
+            }
         }
-
     }
 }
