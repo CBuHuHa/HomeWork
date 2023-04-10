@@ -10,11 +10,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            //Task_1();
-            //Task_2();
-            //Task_3();
-            //Task_4();
-            //Task_5();
+            Task_1();
+            Task_2();
+            Task_3();
+            Task_4();
+            Task_5();
             Task_6();
 
             Console.ReadLine();
