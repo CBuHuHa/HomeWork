@@ -8,28 +8,56 @@ namespace Home_5
 {
     public class Student
     {
-        public int id;
-        public string name;
-        public int age;
-        public int group;
-        public int mathMark;
-        public int physicalEducationMark;
-        public int biologyMark;
+        private int id;
+        private string name;
+        private int age;
+        private int group;
+        private int mathMark;
+        private int physicalEducationMark;
+        private int biologyMark;
         public int reward = 0;
 
-        public Student(int stId, string stName, int stAge, int stGroup) 
-        { 
-            name = stName;
-            age = stAge; 
-            group = stGroup;
-            id = stId;
-            Random random = new Random();
-            mathMark = (int)random.NextInt64(1, 10);
-            physicalEducationMark = (int)random.NextInt64(1, 10);
-            biologyMark = (int)random.NextInt64(1, 10);  
+        public int Id { get; set; }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public int Age { get; set; }
+        public int Group
+        {
+            get { return group; }
+            set { group = value; }
+        }
+        public int MathMark
+        {
+            get { return mathMark; }
+            set { mathMark = value; }
+        }
+        public int PhysicalEducationMark
+        {
+            get { return physicalEducationMark; }
+            set { physicalEducationMark = value; }
+        }
+        public int BiologyMark
+        {
+            get { return biologyMark; }
+            set { biologyMark = value; }
         }
 
-        public void InfoSt ()
+        public Student(int id, string name, int age, int group)
+        {
+            this.name = name;
+            this.age = age;
+            this.group = group;
+            this.id = id;
+            Random random = new Random();
+            mathMark = (int)random.NextInt64(1, 11);
+            physicalEducationMark = (int)random.NextInt64(1, 11);
+            biologyMark = (int)random.NextInt64(1, 11);
+        }
+
+        public void InfoSt()
         {
             Console.WriteLine($"Group: {group} d: {id} Name: {name} Age: {age}  mathMark: {mathMark} physicalEducationMark: {physicalEducationMark} biologyMark: {biologyMark} reward: {reward}");
         }
