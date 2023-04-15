@@ -15,15 +15,23 @@ namespace Home_5
         private int mathMark;
         private int physicalEducationMark;
         private int biologyMark;
-        public int reward = 0;
+        private int reward;
 
-        public int Id { get; set; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-        public int Age { get; set; }
+        public int Age
+        {
+            get { return age; }
+            set { age = value; }
+        }
         public int Group
         {
             get { return group; }
@@ -45,23 +53,26 @@ namespace Home_5
             set { biologyMark = value; }
         }
 
+        public int Reward
+        {
+            get { return reward; }
+            set
+            {
+               reward = value;
+            }
+        }
+
         public Student(int id, string name, int age, int group)
         {
             this.name = name;
             this.age = age;
             this.group = group;
             this.id = id;
+            reward = 0;
             Random random = new Random();
             mathMark = (int)random.NextInt64(1, 11);
             physicalEducationMark = (int)random.NextInt64(1, 11);
             biologyMark = (int)random.NextInt64(1, 11);
         }
-
-        public void InfoSt()
-        {
-            Console.WriteLine($"Group: {group} d: {id} Name: {name} Age: {age}  mathMark: {mathMark} physicalEducationMark: {physicalEducationMark} biologyMark: {biologyMark} reward: {reward}");
-        }
-
-
     }
 }
