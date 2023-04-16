@@ -9,9 +9,12 @@ namespace MyApp // Note: actual namespace depends on the project name.
         static void Main(string[] args)
         {
             Clinic ibolit = new Clinic("ibolit");
+            
             Doctor livesey = new Doctor("Livesey", Specialization.Dentist);
             Doctor odin = new Doctor("Odin", Specialization.Ophthalmologist);
             Doctor house = new Doctor("House", Specialization.Therapist);
+
+            Doctor[] doctors = new[] { livesey, odin, house };
 
             livesey.ShowInfo();
             odin.ShowInfo();

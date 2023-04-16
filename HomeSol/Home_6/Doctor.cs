@@ -20,18 +20,18 @@ namespace Home_6
             Console.WriteLine($"{Specialization}: dr. {Name}");
         }
 
-        public static void Treat(Specialization specialization)
+        public static void Treat(Doctor doctor, Specialization specialization)
         {
             switch (specialization)
             {
                 case Specialization.Ophthalmologist:
-                    Console.WriteLine("Fixed your eyes");
+                    Console.WriteLine($"dr. {doctor.Name} fixed your eyes");
                     break;
                 case Specialization.Dentist:
-                    Console.WriteLine("Fixed your teeth");
+                    Console.WriteLine($"dr. {doctor.Name} fixed your teeth");
                     break;
                 case Specialization.Therapist:
-                    Console.WriteLine("Fixed you");
+                    Console.WriteLine($"dr. {doctor.Name} fixed you");
                     break;
             }
         }

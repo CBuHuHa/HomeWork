@@ -19,20 +19,16 @@ namespace Home_6
             Console.WriteLine("Welcome to the clinic \"" + name + "\"");
         }
 
-        public static void GoToDoctor(IlnessType ilnessType)
+        public static void GoToDoctor(Patient patient, Doctor[] doctors)
         {
-            switch (ilnessType)
+            for (int i = 0; i < doctors.Length; i++)
             {
-                case IlnessType.Eyes:
-                    Doctor.Treat(Specialization.Ophthalmologist);
-                    break;
-                case IlnessType.Teeth:
-                    Doctor.Treat(Specialization.Ophthalmologist);
-                    break;
-                case IlnessType.Other:
-                    Doctor.Treat(Specialization.Ophthalmologist);
-                    break;
+                switch(patient.Ilness == "Eyes " && doctors[i].Specialization == Specialization.Ophthalmologist)
+                {
+
+                }
             }
+         
         }
     }
 }
