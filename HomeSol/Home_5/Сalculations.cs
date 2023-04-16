@@ -23,7 +23,6 @@ namespace Home_5
                     Console.WriteLine($"Group: {s.Group} d: {s.Id} Name: {s.Name} Age: {s.Age}  mathMark: {s.MathMark} physicalEducationMark: {s.PhysicalEducationMark} biologyMark: {s.BiologyMark} reward: {s.Reward}р.");
                 }
             }
-
         }
         /// <summary>
         /// Returns the index of the student with the best biology score in the group (array)
@@ -157,7 +156,7 @@ namespace Home_5
             foreach (Student[] n in groups)
             {
                 Student bestStudentP = Сalculations.MaxPhys(n);
-                bestStudentP.Reward = bestStudentP.Reward+ rew;
+                bestStudentP.Reward = bestStudentP.Reward + rew;
             }
             foreach (Student[] n in groups)
             {
