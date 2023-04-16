@@ -14,7 +14,7 @@ namespace Home_5
         /// Output of all information about students
         /// </summary>
         /// <param name="groups"></param>
-        public static void InfoSt(params Student[][] groups)
+        public static void ShowStudentsInfo(params Student[][] groups)
         {
             foreach (Student[] n in groups)
             {
