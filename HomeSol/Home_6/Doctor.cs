@@ -25,13 +25,13 @@ namespace Home_6
             switch (specialization)
             {
                 case Specialization.Ophthalmologist:
-                    Console.WriteLine($"dr. {doctor.Name} fixed your eyes");
+                    Console.WriteLine($"dr.{doctor.Name} fixed your eyes");
                     break;
                 case Specialization.Dentist:
-                    Console.WriteLine($"dr. {doctor.Name} fixed your teeth");
+                    Console.WriteLine($"dr.{doctor.Name} fixed your teeth");
                     break;
                 case Specialization.Therapist:
-                    Console.WriteLine($"dr. {doctor.Name} fixed you");
+                    Console.WriteLine($"dr.{doctor.Name} fixed you");
                     break;
             }
         }

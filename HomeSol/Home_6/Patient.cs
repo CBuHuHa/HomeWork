@@ -13,7 +13,6 @@ namespace Home_6
         public int Id { get; set; }
         public string Ilness { get; set; }
         
-
         public Patient(string name, string ilness) : base(name)
         {
             Id = id;
