@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace Home_7
 {
-    public class Cook : Employee, IWorkable
+    public class Cook : Employee
     {
-        public Cook(string name, params Skills[] skills) : base(name, skills)
-        {
+        public Cook(string name) : base(name) { }
 
-        }
-
-        public string[] DoWork()
+        public override void Working(params ISkillable[] skill)
         {
-            throw new NotImplementedException();
+            foreach (ISkillable skillItem in skill)
+            {
+                string sk = skillItem.GetSkill();
+                string man = ToString();
+                Console.WriteLine($"{man} is {sk}");
+            }
         }
 
         public override string ToString()

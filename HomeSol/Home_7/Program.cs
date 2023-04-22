@@ -7,14 +7,23 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            MacDack macDack = new MacDack();
+            MacDack macDack = new MacDack("McDonald’s");
 
-            Manager alex = new Manager("Alex", Skills.managing, Skills.cooking, Skills.solving);
-            Cook ivan = new Cook("Ivan", Skills.cooking, Skills.cleaning);
-            Cleaner john = new Cleaner("John", Skills.cleaning);
+            Manager manager = new Manager("Ivan");
+            Cook cook = new Cook("Jamie");
+            Cleaner cleaner = new Cleaner("Vasya");
+            Console.WriteLine($"Manager: {manager.Name}, cook: {cook.Name}, cleaner: {cleaner.Name}");
 
-            macDack.DoWork(alex, ivan, john);
+            Managing managing = new Managing();
+            Cooking cooking = new Cooking();
+            Cleaning cleaning = new Cleaning();
+            Solving solving = new Solving();
 
+            Console.ReadKey();
+
+            manager.Working(managing, solving, cooking);
+            cook.Working(cooking, cleaning);
+            cleaner.Working(cleaning);
         }
     }
 }

@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Home_7
 {
-    public class Manager : Employee, IWorkable
+    public class Manager : Employee
     {
-        public Manager(string name, params Skills[] skills) : base(name, skills)
-        {
-            
-        }
-
-        public string[] DoWork()
-        {
-            string[] result = new string[1];
-
-            return result;
-        }
+        public Manager(string name) : base(name) { }
 
         public override string ToString()
         {
             return "Manager";
+        }
+
+        public override void Working(params ISkillable[] skill)
+        {
+            foreach (ISkillable skillItem in skill)
+            {
+                string sk = skillItem.GetSkill();
+                string man = ToString();
+                Console.WriteLine($"{man} is {sk}");
+            }
         }
     }
 }

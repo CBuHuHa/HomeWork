@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace Home_7
 {
-    internal class GetSkills
+    public class Managing : ISkillable
     {
-
-        public string[] GetSkill(Employee employee)
+        public string GetSkill()
         {
-            string[] result = employee.Skill;
-
-
-            return employee.skills;
+            return "managing people";
         }
-
     }
 }

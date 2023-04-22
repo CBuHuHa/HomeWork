@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Home_7
 {
-    interface IWorkable
+    public class Cleaning : ISkillable
     {
-        string[] DoWork();
+        public string GetSkill()
+        {
+            return "cleaning";
+        }
     }
 }
