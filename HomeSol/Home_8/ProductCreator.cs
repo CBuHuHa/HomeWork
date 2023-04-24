@@ -11,8 +11,8 @@ namespace Home_8
         public static List<Product> CreateRation(int count)
         {
             string[] food = { "Banana", "Ham", "Beef", "Pear", "Potato", "Shrimp", "Chicken", "Butter", "Carrot", "Tomato", "Pork", "Spaghetti", "Bread", "Chocolate" };
-            int minCal = 100;
-            int maxCal = 300;
+            int minCal = 50;
+            int maxCal = 500;
             List<Product> list = new List<Product>();
 
             for (int i = 0; i < count; i++)

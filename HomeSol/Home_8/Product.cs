@@ -17,6 +17,5 @@ namespace Home_8
             Name = name;
             Calories = calories;
         }
-
     }
 }
