@@ -8,7 +8,7 @@ namespace Home_8
 {
     public class ProductCreator
     {
-        public List<Product> CreateRation(int count)
+        public static List<Product> CreateRation(int count)
         {
             string[] food = { "Banana", "Ham", "Beef", "Pear", "Potato", "Shrimp", "Chicken", "Butter", "Carrot", "Tomato", "Pork", "Spaghetti", "Bread", "Chocolate" };
             int minCal = 100;

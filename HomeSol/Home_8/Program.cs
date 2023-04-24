@@ -9,31 +9,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            ProductCreator creator = new ProductCreator();
+            Person ivan = new Person("Ivan", 3000);
 
-            Dictionary<Week, List<Product>> ration = new Dictionary<Week, List<Product>>()
-            {
-                { Week.Monday, creator.CreateRation() },
-                { Week.Tuesday, creator.CreateRation() },
-                { Week.Wednesday, creator.CreateRation() },
-                { Week.Thursday, creator.CreateRation() },
-                { Week.Friday, creator.CreateRation() },
-                { Week.Saturday, creator.CreateRation() },
-                { Week.Sunday, creator.CreateRation() },
-            };
+            Dictionary<Week, List<Product>> ration = RationCreator.GetRation();
 
-            foreach (var item in ration)
-            {
-                Console.WriteLine(item.Key.ToString());
-                foreach (var product in item.Value)
-                {
-                    string name = product.Name;
-                    int cal = product.Calories;
+            RationCreator.VeiwRation(ration);
 
-                    Console.WriteLine($" {name} : {cal}");
-                }
-            }
 
-        }
+        } 
     }
 }
