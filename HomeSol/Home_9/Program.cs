@@ -1,5 +1,6 @@
 ﻿using System;
 using Home_9;
+using System.Linq;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -9,7 +10,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             List<Person> people = PersonGenerator.GenList(10);
 
-            foreach (Person person in people)
+            //var peopleWithNames = from person in people
+            //                      where person.Name.StartsWith("A")
+            //                      select person;
+
+            var peopleWithNames = people.Where(person => person.Name.StartsWith("A"));
+
+            foreach (var person in peopleWithNames)
             {
                 person.ShowInfo();
             }
